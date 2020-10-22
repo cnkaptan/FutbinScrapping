@@ -1,0 +1,25 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id 'application'
+}
+group = 'com.cnkaptan'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url = uri("https://jitpack.io") }
+    jcenter()
+}
+dependencies {
+    implementation "it.skrape:skrapeit-core:1.0.0-alpha6"
+    compile group: 'org.jetbrains.kotlinx', name: 'kotlinx-html-jvm', version: '0.7.2'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation "org.jsoup:jsoup:1.10.3"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = '1.8'
+}
+application {
+    mainClassName = 'MainKt'
+}
